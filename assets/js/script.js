@@ -1,22 +1,59 @@
-var apiUrl = "https://archive.org/advancedsearch.php?q=subject:google+sheets&output=json";
+const apiKey = `your_openweathermap_api_key`;
+const cityInput = document.getElementById('city-input');
+const searchButton = document.getElementById('search-button');
+const cityButtons = document.getElementById('city-buttons');
+const currentWeather = document.getElementById('current-weather');
+const forecast = document.getElementById('forecast');
+const cites = ['Atlanta', 'Denver', 'Seattle', 'San Francisco', 'Orlando', 'New York', 'Chicago', 'Austin'];
 
-var listEl = document.getElementById("myData");
 
-fetch(apiUrl)
-    .then(function(response) {
-        if (!response.ok) {
-            throw new Error('Network response was not ok ' + response.statusText);
-        }
-        return response.json();
-    })
-    .then(function(data) {
-        var docArray = data.response.docs;
-        for(var i = 0; i < docArray.length; i++) {
-            var listItem = document.createElement("li");
-            listItem.textContent = docArray[i].description;
-            listEl.appendChild(listItem);
-        }
-    })
-    .catch(function(error) {
-        console.log('Fetch error: ', error);
-    });
+cities.forEach(city => {
+    const button = document.createElement('button');
+    button.textContent = city;
+    button.addEventListener('click', () => fetchWeather(city));
+    cityButtons.appendChild(button);
+});
+
+searchButton.addEventListener('click', () => {
+    const city = cityInput.value;
+    if (city) fetchWeather(city);
+});
+
+function fetchWeather(city) {
+    fetch(https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial)
+        .then(response => response.json())
+        .then(data => {
+            const { name, main, wind, weather } = data;
+            currentWeather.innerHTML = 
+                <h2>${name}</h2>
+                <p>Temp: ${main.temp} °F</p>
+                <p>Wind: ${wind.speed} MPH</p>
+                <p>Humidity: ${main.humidity} %</p>
+            ;
+            fetchForecast(city);
+        })
+        .catch(error => console.error('Error fetching weather:', error));
+}
+
+function fetchForecast(city) {
+    fetch(https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=imperial)
+        .then(response => response.json())
+        .then(data => {
+            const forecastData = data.list.filter((_, index) => index % 8 === 0);
+            forecast.innerHTML = '';
+            forecastData.forEach(day => {
+                const { dt_txt, main, wind, weather } = day;
+                const date = new Date(dt_txt).toLocaleDateString();
+                const forecastCard = document.createElement('div');
+                forecastCard.className = 'forecast-card';
+                forecastCard.innerHTML = 
+                    <h4>${date}</h4>
+                    <p>Temp: ${main.temp} °F</p>
+                    <p>Wind: ${wind.speed} MPH</p>
+                    <p>Humidity: ${main.humidity} %</p>
+                ;
+                forecast.appendChild(forecastCard);
+            });
+        })
+        .catch(error => console.error('Error fetching forecast:', error));
+}
