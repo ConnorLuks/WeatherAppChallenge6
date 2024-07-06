@@ -9,7 +9,7 @@ header {
     background-image: url('/weathermanybackdrop.jpg');
     background-size: cover;
     background-position: center;
-    color: white;
+    color: #f5f5f5;
     padding: 30px 0;
     text-align: center;
 }
@@ -21,7 +21,7 @@ header {
 
 .search-container {
     flex: 1;
-    max-width: 200px;
+    max-width: 210px;
     padding: 10px;
     background-color: #f0f0f0;
     margin-right: 20px;
@@ -37,7 +37,7 @@ header {
 #search-button {
     padding: 5px;
     margin-bottom: 10px;
-    background-color: #4a90e2;
+    background-color: #0b66ce;
     color: white;
     border: none;
     cursor: pointer;
@@ -73,9 +73,11 @@ header {
 }
 
 .current-weather {
-    background-color: #e0e0e0;
+    background-image: url('/weatherbackdrop.png');
+    background-size: cover;
+    color: white;
     padding: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 
 .forecast-container {
@@ -89,10 +91,11 @@ header {
 }
 
 .forecast-card {
-    background-color: #333;
+    background-image: url('/weatherbackdrop.png');
     color: white;
     padding: 55px;
     margin: 10px;
+    margin-top: 5px;
     text-align: center;
     flex: 1;
     max-width: 150px;
