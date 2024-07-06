@@ -16,10 +16,11 @@
         <div class="search-container">
             <label for="city-input">Search for a City:</label> <br></br>
             <input type="text" id="city-input" placeholder="Enter City Name"> 
-            <button id="search-button">Search</button>
-            <div id="search-history"></div>
+            <button id="search-button">Search</button> <!-- search button to begin the city search -->
+            <div id="search-history"></div> <!-- section for the previous searches -->
         </div>
 
+        <!-- section that will display the current weather -->
         <div class="weather-container">
             <div id="current-weather" class="current-weather">
                 <h2 id="city-name"></h2>
@@ -29,6 +30,7 @@
                 <p id="current-humidity"></p>
             </div>
 
+            <!-- section that displays the forecast for today and the next 5 days -->
             <div class="forecast-container">
                 <h2>5-Day Forecast:</h2>
                 <div id="forecast" class="forecast"></div>

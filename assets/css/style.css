@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    background-image: url("../images/weathermanybackdrop.jpg");
+    background-image: url("../images/weathermanybackdrop.jpg"); /* link to the Header's background */
     background-size: cover;
     background-position: center;
     color: #f5f5f5;
@@ -14,12 +14,12 @@ header {
     text-align: center;
 }
 
-.container {
+.container { /* position of the Search area box */
     display: flex;
     padding: 10px;
 }
 
-.search-container {
+.search-container { /* search button container styling */
     flex: 1;
     max-width: 210px;
     padding: 10px;
@@ -27,14 +27,14 @@ header {
     margin-right: 20px;
 }
 
-#city-input {
+#city-input { /* styling of the Enter City Name box */
     padding: 5px;
     margin-bottom: 10px;
     width: 100%;
     box-sizing: border-box
 }
 
-#search-button {
+#search-button { /* styling for the actual search button */
     padding: 5px;
     margin-bottom: 10px;
     background-color: #0b66ce;
@@ -43,7 +43,7 @@ header {
     cursor: pointer;
 }
 
-#city-buttons button {
+#city-buttons button {  /* styling for the previously searched cities */
     display: block;
     width: 100%;
     padding: 10px;
@@ -53,12 +53,12 @@ header {
     cursor: pointer;
 }
 
-#search-history {
+#search-history { /* previously searched cities styling section */
     display: flex;
     flex-direction: column;
 }
 
-#search-history button {
+#search-history button { /* styling for the previously searched cities history */
     background-color: #ccc;
     border: none;
     padding: 10px;
@@ -66,13 +66,13 @@ header {
     cursor: pointer;
 }
 
-.weather-container {
+.weather-container { /* layout of Todays weather box */
     flex: 2;
     display: flex;
     flex-direction: column;
 }
 
-.current-weather {
+.current-weather { /* structure of text and background image for Todays weather box */
     background-image: url("../images/weatherbackdrop.png");
     background-size: cover;
     color: white;
@@ -80,17 +80,17 @@ header {
     margin-bottom: 5px;
 }
 
-.forecast-container {
+.forecast-container { /* page position of the 5 day forecase cards */
     display: flex;
     flex-direction: column;
 }
 
-#forecast {
+#forecast { /* layout of the 5 day forecast cards */
     display: flex;
     justify-content: space-around;
 }
 
-.forecast-card {
+.forecast-card { /* styling for the 5 day forecast cards */
     background-image: url("../images/weatherbackdrop.png");
     color: white;
     padding: 45px;
