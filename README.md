@@ -11,7 +11,7 @@ Today and the next 5 days:
 * Humidity
 
 # Installation
-not installatiion required, works directly on the website link.
+No installatiion required, works directly on the website link.
 
 # How to use:
 In the box that says "Enter City Name" enter the name of a city, you can select just about any city in the world.
@@ -27,19 +27,20 @@ Git Hub Repository Link.
 https://github.com/ConnorLuks/WeatherAppChallenge6
 
 Git Pages Link.
-
+https://connorluks.github.io/WeatherAppChallenge6/
 
 # Screenshots of the website:
 Displays the page upon loading the website.
-![alt text](images/weatherappmain1.png)
+![alt text](assets/images/weatherappmain1.png)
 Shows several results, along with result from clicking a previously searched city.
-![alt text](images/weatherappmain2.png)
+![alt text](assets/images/weatherappmain2.png)
 Shows additional results.
-![alt text](images/weatherappmain3.png)
+![alt text](assets/images/weatherappmain3.png)
 
 # License:
 Distributed under the MIT license.
 
 # Credits:
 Connor O'Halloran.
+
 Open Weather Map API for the API needed.
