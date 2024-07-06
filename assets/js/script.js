@@ -13,7 +13,7 @@ searchButton.addEventListener('click', () => {
     }      
 });
 
-function fetchWeather(city) {
+function fetchWeather(city) { // fetches todays weather from the API //
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`)
         .then(response => response.json())
         .then(data => {
@@ -30,11 +30,11 @@ function fetchWeather(city) {
         .catch(error => console.error('Error fetching weather data:', error));
 }
 
-function fetchForecast(city) {
+function fetchForecast(city) { // fetches the weather forecast for the next 5 days //
     fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=imperial`)
         .then(response => response.json())
         .then(data => {
-            const forecastData = data.list.filter((_, index) => index % 8 === 0);
+            const forecastData = data.list.filter((_, index) => index % 8 === 0); // processes the data for the forecast //
             forecast.innerHTML = '';
             forecastData.forEach(day => {
                 const { dt_txt, main, wind, weather } = day;
@@ -53,7 +53,7 @@ function fetchForecast(city) {
         .catch(error => console.error('Error fetching weather forecast:', error));
 }
 
-function addSearchHistory(city) {
+function addSearchHistory(city) { // displays and allows you to click a previous city searched on the left hand side of the screen //
     const button = document.createElement('button');
     button.textContent = city;
     button.addEventListener('click', () => fetchWeather(city));
