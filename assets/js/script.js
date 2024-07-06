@@ -1,8 +1,18 @@
 const apiKey = `a28a5fc49c451afefe61fe6fa718183c`;
 const cityInput = document.getElementById('city-input');
 const searchButton = document.getElementById('search-button');
+const cityButtons = document.getElementById('city-buttons');
 const currentWeather = document.getElementById('current-weather');
 const forecast = document.getElementById('forecast');
+const cities = ['Orlando', 'Atlanta', 'Boston', 'New York', 'Cleveland', 'Dallas', 'Seattle'];
+
+cities.forEach(city => {
+    const button = document.createElement('button');
+    button.textContent = city;
+    button.addEventListener('click', () => fetchWeather(city));
+    cityButtons.appendChild(button);
+});
+
 
 searchButton.addEventListener('click', () => {
     const city = cityInput.value;
