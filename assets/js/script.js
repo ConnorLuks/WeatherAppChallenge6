@@ -21,8 +21,8 @@ function fetchWeather(city) {
             const currentDate = new Date(dt * 1000).toLocaleDateString();
             currentWeather.innerHTML = `
                 <h2>${name} (${currentDate}) </h2>
-                <p>Temp: ${main.temp} °F</p>
-                <p>Wind: ${wind.speed} MPH</p>
+                <p>Temp: ${main.temp.toFixed(1)} °F</p>
+                <p>Wind: ${wind.speed.toFixed(1)} MPH</p>
                 <p>Humidity: ${main.humidity}%</p>
             `;
             fetchForecast(city);
@@ -43,8 +43,8 @@ function fetchForecast(city) {
                 forecastCard.className = 'forecast-card';
                 forecastCard.innerHTML = `
                     <h4>${date}</h4>
-                    <p>Temp: ${main.temp} °F</p>
-                    <p>Wind: ${wind.speed} MPH</p>
+                    <p>Temp: ${main.temp.toFixed(1)} °F</p>
+                    <p>Wind: ${wind.speed.toFixed(1)} MPH</p>
                     <p>Humidity: ${main.humidity}%</p>
                 `;
                 forecast.appendChild(forecastCard);

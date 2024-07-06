@@ -16,7 +16,7 @@ header {
 
 .container {
     display: flex;
-    padding: 20px;
+    padding: 10px;
 }
 
 .search-container {
@@ -93,10 +93,11 @@ header {
 .forecast-card {
     background-image: url('/weatherbackdrop.png');
     color: white;
-    padding: 55px;
-    margin: 10px;
+    padding: 45px;
+    margin: 5px;
     margin-top: 5px;
     text-align: center;
     flex: 1;
-    max-width: 150px;
+    max-width: 150px 0;
+    max-height: 150px 0;
 }
