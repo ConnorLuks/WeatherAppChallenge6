@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    background-image: url('/assets/images/weathermanybackdrop.jpg');
+    background-image: url("/assets/images/weathermanybackdrop.jpg");
     background-size: cover;
     background-position: center;
     color: #f5f5f5;
@@ -73,7 +73,7 @@ header {
 }
 
 .current-weather {
-    background-image: url('/assets/images/weatherbackdrop.png');
+    background-image: url("/assets/images/weatherbackdrop.png");
     background-size: cover;
     color: white;
     padding: 10px;
@@ -91,7 +91,7 @@ header {
 }
 
 .forecast-card {
-    background-image: url('/assets/images/weatherbackdrop.png');
+    background-image: url("/assets/images/weatherbackdrop.png");
     color: white;
     padding: 45px;
     margin: 5px;
